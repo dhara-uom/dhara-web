@@ -603,6 +603,17 @@ ul#sliding-navigation li:hover ul{
     display: block;
 }
 
+img.center {
+
+    display: block;
+
+    margin-left: auto;
+
+    margin-right: auto;
+    padding-bottom: 10px;
+
+}
+
 
 /* Holly Hack for IE \*/
 * html .sidebarmenu ul li { float: left; height: 1%; }
