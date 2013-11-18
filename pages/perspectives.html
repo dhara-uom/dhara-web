@@ -1,0 +1,64 @@
+<h2><strong>Architectural Perspectives</strong></h2>
+
+<p>We have come up with two potential architectures for integrating WPS capabilities with Apache&nbsp;Airavata. These perspectives address the limitations of existing systems which are identified through&nbsp;out literature review. The 1st architecture is focused on enabling Apache Airavata to orchestrate&nbsp;WPS processes by importing WSDLs of an existing WPS instances. The 2nd architecture is about&nbsp;deploying a workflow created in Apache Airavata as a WPS which provides a high degree ofreusability for geoscience experiments.</p>
+
+<h3><strong>WPS Orchestration</strong></h3>
+
+<p>WPS orchestration is about providing the flexibility to the chain a set of WPS processes. It is a&nbsp;crucial need for geoscientist to carry out their experiments effectively. Hence, WPS orchestration&nbsp;is a major functionality that should be present in a geoscience gateway. Figure 1 shows the&nbsp;architectural diagram of WPS orchestration using Apache Airavata with the use of SOAP&nbsp;interfaces provided by the existing WPS implementing software. PyWPS WPS implementation is&nbsp;capable of expose WPS services through WSDL which can use to import WPS services as&nbsp;components in XBaya UI thourgh WSDL interface to chain WPS processes. 52 o North WPS&nbsp;implementation is still lacking feature of expose WPS services through WSDLs. But it‟s in the&nbsp;development roadmap of 52o North WPS implementation.</p>
+
+<p><strong><em>Functional flow</em></strong></p>
+
+<ul>
+    <li>Apache Airavata is capable of importing a WSDL, listing available services of a WPS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; instance (PyWPS, 52o North WPS), through its XBaya GUI.</li>
+    <li>Each service imported through the WSDL is made available as a component which&nbsp;can be used to compose a workflow simply through drag-and-drop in XBaya UI.</li>
+    <li>After creating the workflow, Apache Airavata‟s workflow interpreter engine can&nbsp;execute it through SOAP messages consuming the used WPS processes.</li>
+</ul>
+
+<p><strong><em>Objectives</em></strong></p>
+
+<ul>
+    <li>Reusing existing WPS processes in a geoscience application</li>
+    <li>Ease of WPS orchestration through scientific workflows</li>
+    <li>Use existing WPS processes available in Desktop GIS systems like GRASS from theweb by bridging with WPS implementations</li>
+</ul>
+<br/>
+
+<h3><strong>Workflows in WPS Standard</strong></h3>
+
+<p>Geoscience experiments are often complex and requires a significant programming knowledge to
+    develop sophisticated algorithms and programs for them. Therefore at the current stage of
+    computational geoscience, geoscientists are unable to engage in such tasks on their own without
+    the aid of a computer scientist. But it would be convenient and beneficial for the geoscientists to
+    be able to author a geoscience process on their own.</p>
+
+<p>Complex geoscience computations require HPC resources for executing. General purpose
+    computers are not sufficient to carry out these complex computations. Apache Airavata enables
+    the support to execute the complex scientific applications deployed in grid environments and
+    supercomputing resources. Apache Airavata‟s GFac component wraps command line driven
+    scientific applications and make them into network-accessible services which can be used to
+    create scientific workflows. A geoscience gateway is a place which abstracts the complex
+    computational resources and provides a domain specific environment for scientist to conduct
+    their experiments. Therefore architecture 2 addresses a major functionality which needs to be
+    present in a geoscience gateway.</p>
+
+<p><em><strong>Functional flow</strong></em></p>
+
+<ul>
+    <li>Geoscientist author and test workflows in XBaya UI, making use of the services&nbsp;added by the gateway developer</li>
+    <li>Geoscientist deploy the created workflows in the WPS server instance (PyWPS)</li>
+    <li>Deployed WPS processes can be queried by any WPS client by sending a&nbsp;&lt;GetCapabilities&gt; request to the server instance. This request will be responded&nbsp;directly by the WPS server itself without communicating with Apache Airavata</li>
+    <li>Queries to WPS for process description (&lt;DescribeProcess&gt;) will also be responded&nbsp;directly by the WPS server.</li>
+    <li>Execute requests to WPS server (&lt;Execute&gt;) will be forwarded to Apache Airavata,&nbsp;which will only handle the computation. The process output will be then sent to&nbsp;Apache Airavata and forwarded to WPS server accordingly.These steps are explained&nbsp;in Figure 2.</li>
+</ul>
+
+<p><em><strong>Objectives</strong></em></p>
+
+<ul>
+    <li>Ability to share computations created as workflows by deploying them in a WPS&nbsp;server</li>
+    <li>Use the functionalities provided in various geo-processing libraries (GDAL/OGR,Proj4) available via WPS implementations.</li>
+    <li>Authoring of processes in WPS standard which is now in the hands of the software&nbsp;developer can be made</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>

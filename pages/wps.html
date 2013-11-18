@@ -1,1 +1,45 @@
-poster
+<h3>OGC’s WPS (Web Processing Service)</h3>
+<p>
+    Web Processing Service is one of major standards in OGC. WPS defines standard interface to
+    access geospatial processing services. WPS is used to provide wide range of geospatial services
+    from simple mathematical calculations to larger geospatial analysis. WPS service discovery and
+    execution happens basically in SOA strategies.
+</p>
+<p>
+    Basically client can send request to process service with specifying data required. Then user can
+    obtain the output by a defined format. Data can be of image data format or GML (Geography
+    Markup Language) which is an xml based language.
+</p>
+<p>
+    WPS atomic operations have been standardized to achieve interoperability among processes.
+    There are 3 main methods defined in WPS: GetCapabilities, DescribeProcesses and Execute.
+    GetCapabilities method provides what processes are available and description of each. For an
+    example to calculate an intersection area of two buffered areas, client might expect the intersect
+    to be returned.
+</p>
+<p>
+    Client send it as HTTP request with KVP(key/value pair) service as WPS and request as
+    GetCapabilities. Then client can identify whether the process desired is available or not in the
+    relevant WPS server.
+</p>
+<p>
+    If the desired process is found, client can request more detailed information of that process. That
+    is can be achieve through DescribeProcess. This is need of two areas as inputs name firstarea and
+    secondarea where output to be named as thirdarea. Basically theree types of input output
+    formats are defined: Literal data, Complex data and bounding box data [49]. Literal data can be
+    primitive like character, string, date, etc. Complex data is vector or raster data. And the bounding
+    box format specifies the area of a map as a box. An XML schema is defined for the co-ordinates.
+    Execute will trigger the process to be executed for obtain the output in GML format. Request is
+    similar to KVP HTTP GET request where input parameters defined accordingly. If the time
+    taken to a process is greater than the time taken for live HTTP connection then client can request
+    to use poll method for retrieve output results of a particular process. In poll method client
+    frequently poll and see whether the data is available.
+</p>
+<p>
+    Output can be specific MIME schema or reference URL for the result. The output can be
+    anything. Even it can be an image where client need to specify for raw data output.
+    Requests can also be wrapped using SOAP structure where SOAP body is used to define request
+    parameters of WPS. This promotes platform independent, language independent and highly
+    extensible messaging framework support for WPS.
+</p>
+

@@ -1,0 +1,67 @@
+<h3>OGC</h3>
+<p>
+    OGC (Open Geospatial Consortium) is not for profit organization which makes geospatial standards.
+    Objective of OGC is to “a world in which everyone benefits from the use of geospatial information
+    and supporting technology”. At the time of writing this, OGC is consisted of 445 companies,
+    research organizations, public organizations, and universities getting together developing interface
+    standards to make almost all geospatial applications interoperable by going through a consensus
+    process. Set of OGC standards are so large and no single software in the world has implemented
+    almost all the standards. To give an overview, some of the standards will be discussed here.
+    OGC standards expand in many domains. For an example in aeronautics Aeronautical Information
+    Exchange Model (AIXM) and the Weather Information Exchange Model (WXXM) standards are
+    based on OGC [1]. Spatial data for built environment for civil engineering aspects is also a major
+    usage where 3d modeling is heavily used. Geographical location finding is heavily used in business
+    intelligence systems where lot of applications needs to be interoperable and common standard is a
+    must. In defense systems OGC standards are used because of no proprietary system can provide such
+    a broad range of interoperability cost effectively. Disaster management systems also use different
+    kind of raster data, vector data and route data where many systems needs to be interoperable (not
+    only IP based). Similarly it has a broader scope in many other fields as well.
+</p>
+<p>
+    These software may be OGC implementing or OGC compliant. Only OGC compliant products can
+    wear official OGC logo. For a product or a software to become OGC compliant it needs to pass
+    CITEE tests [2]. CITE tests are essentially about Web Services.
+</p>
+<p>
+    OGC has number of standards spread in disciplines as mentioned above. From the web services point
+    of view we can find WMS (Web Map Service), WFS (Web Feature Service), WPS(Web Processing
+    Service) and (WCS)Web Coverage Service. WMS basically focus on providing the relevant map.
+    Client can request the specific map by addressing the relevant URL with standard defined parameters
+    with coordinates. Then map is returned in PNG, GIF or JPEG, or sometimes as vector-based
+    graphical elements in Scalable Vector Graphics (SVG) or Web Computer Graphics Metafile
+    (WebCGM) formats.
+</p>
+<p>
+    WFS provides features over a map. After obtaining the map, client might need to show specific
+    geographical features on top of a map. For an example it may be locations where some wild fire
+    occurs. WMS server cannot provide that. And it should be obtained as a feature. This data is received
+    by (Geographical Markup Language) GML format. Then those specific locations can be displayed by
+    client software.
+</p>
+<p>
+    WPS is specified for geospatial processing. For an example in the above scenario if some client
+    needs to identify which towns are affected by wildfire he has to call Web Processing service which
+    can calculate the buffer area, impact on intersections .etc. So client can then display the towns
+    affected by the wild fire. WPS can be used to provide even the simplest calculation and very
+    sophisticated calculations.
+</p>
+<p>
+    WCS is more related to space/time phenomena. Not like WMS and WFS providing static So this
+    dynamic information can be used for client side rendering and use more rich set of syntaxes than
+    WMS and WFS.
+</p>
+<p>
+    Likewise OGC standards are in wider range and they are widely adopted by larger community. And
+    it is continuously evolving until almost everybody gets benefit out of it. Error! Reference source
+    not found. contains information on OGC support in various popular tools in geoscience domain.
+</p>
+
+<h4>References</h4>
+<p>
+    [1] “About OGC.” [Online]. Available: http://www.opengeospatial.org/ogc. [Accessed: 21-Apr-
+    2013].
+</p>
+<p>
+    [2] “CITE tests,” CITE tests. [Online]. Available: http://cite.opengeospatial.org/teamengine/.
+    [Accessed: 18-Apr-2013].
+</p>

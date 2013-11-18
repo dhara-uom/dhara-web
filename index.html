@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title>Dhara Project</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="styles-custom.css" media="screen">
     <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="ie.css" media="screen">
     <![endif]-->
@@ -31,7 +32,6 @@
             Cufon.replace('p', {fontFamily:'Calibri'});
             Cufon.replace('ul',{fontFamily:'Calibri'});
             Cufon.replace('#sidebarmenu1');
-
         });
     </script>
 
@@ -106,25 +106,19 @@
             <li class="sliding-element"><a href="#">Background</a><ul>
                 <li class="sliding-element"><a href="#" onclick="loadContent('geoscience.html');">Geoscience</a></li>
                 <li class="sliding-element"><a href="#" onclick="loadContent('workflows.html');">Scientific Workflows</a></li>
-<<<<<<< HEAD
                 <li class="sliding-element"><a href="#" onclick="loadContent('pages/airavata.html');">Apache Airavata</a></li>
                 <li class="sliding-element"><a href="#" onclick="loadContent('pages/rave.html');">Apache Rave</a></li>
                 <li class="sliding-element"><a href="#" onclick="loadContent('pages/north.html');">52 North WPS</a></li>
-=======
-                <li class="sliding-element"><a href="#" onclick="loadContent('workflows.html');">Apache Airavata</a></li>
-                <li class="sliding-element"><a href="#" onclick="loadContent('pages/rave.html');">Apache Rave</a></li>
-                <li class="sliding-element"><a href="#" onclick="loadContent('workflows.html');">52 North WPS</a></li>
->>>>>>> 6430c3721f42baa1d01be0fe9ca2c7b863cda40b
                 <li class="sliding-element">
                     <a href="#">OGC</a><ul>
-                    <li class="sliding-element">
+                    <li class="sliding-element" onclick="loadContent('pages/ogc.html');">
                         <a href="#">What is OGC?</a>
                     </li>
-                    <li class="sliding-element">
+                    <li class="sliding-element"  onclick="loadContent('pages/wps.html');">
                         <a href="#">WPS</a>
                     </li>
                     <li class="sliding-element" onclick="loadContent('pages/wcs.html');"><a href="#">WCS</a></li>
-                    <li class="sliding-element"><a href="#">WFS</a></li>
+                    <li class="sliding-element" onclick="loadContent('pages/wfs.html');"><a href="#">WFS</a></li>
                     <li class="sliding-element" onclick="loadContent('pages/wms.html');"><a href="#">WMS</a></li>
                 </ul>
                 </li>
@@ -132,10 +126,13 @@
             </li>
             <li class="sliding-element"><a href="#">Dhara Gateway</a><ul><li class="sliding-element"><a href="#" onclick="loadContent('pages/problem.html');">Problem</a></li>
                 <li class="sliding-element"><a href="#" onclick="loadContent('pages/solution.html');">Solution</a></li>
-                <li class="sliding-element"><a href="#">The Gateway</a></li>
-                <li class="sliding-element"><a href="#">Architecture</a></li>
-                <li class="sliding-element"><a href="#" onclick="loadContent('pages/portal.html');">Dhara Portal</a></li>
-                <li class="sliding-element"><a href="#">Portal Services</a></li>
+                <li class="sliding-element"><a href="#">The Gateway</a></li><ul>
+                    <li class="sliding-element"><a href="#" onclick="loadContent('pages/overview.html');">Overview</a></li>
+                    <li class="sliding-element"><a href="#" onclick="loadContent('pages/perspectives.html');">Perspectives</a></li>
+                    <li class="sliding-element"><a href="#">Architecture</a></li>
+                    <li class="sliding-element"><a href="#" onclick="loadContent('pages/portal.html');">Dhara Portal</a></li>
+                    <li class="sliding-element"><a href="#">Portal Services</a></li>
+                </ul>
             </ul>
             </li>
             <li class="sliding-element"><a href="#">Documentation</a><ul>
