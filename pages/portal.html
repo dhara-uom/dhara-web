@@ -1,0 +1,132 @@
+<h3>Dhara Portal</h3>
+<p>Dhara portal was implemented based on Apache Rave 0.22. Our implementation on
+    Apache Rave to facilitate the functionalities provided by Dhara gateway can be divided into two
+    major areas.
+</p>
+
+<ul>
+    <li>Functionalities for a generic user of the gateway</li>
+    <ul>
+        <li>Load and execute a WPS process in a remote server</li>
+        <li>Load and view geospatial data from a remote server using WFS</li>
+        <li>Load and view geospatial data locally in GML and KML format</li>
+    </ul>
+    <li>Functionalities for the admin user of the gateway</li>
+    <ul>
+        <li>List and deploy workflows in WPS standard</li>
+        <li>List experiments</li>
+    </ul>
+</ul>
+<br>
+<img class="center" src="images/portal.png">
+<h4>Functionalities for a generic user of the gateway</h4>
+<p>Apache Rave has Apache Wookie and Apache Shindig to provide W3C and OpenSocial widgets
+    support respectively. The tools to support WPS process loading, WFS data loading, KML and
+    GML data loading are implemented in Dhara portal using the W3C widgets.
+    As each tool requires a map to visualize various geospatial data a map is implemented in a
+    separate widget. Therefore the set of functionalities are provided through the following widgets.
+</p>
+<ul>
+    <li>Common Map</li>
+    <li>WPS Client</li>
+    <li>WFS Client</li>
+    <li>GML Client</li>
+    <li>KML Client</li>
+</ul>
+<p>
+    The client functionality and visualizing is implemented using OpenLayers libraries.
+    Apache Rave allows any widget in the widget store of the portal to be added to a user‟s page as
+    required. As we have implemented the set of tools as widgets Dhara portal allows the client to
+    use required tools included in the tool store of Dhara portal.
+
+</p>
+<h4>Dhara Tools</h4>
+<br>
+<ul>
+    <li><b>WPS Client</b></li>
+</ul>
+
+<p><b><i>Functionality:</i></b>
+    Allows the user to load WPS processes available in a remote server <br>
+    Given a URL the WPS process available in the particular server is displayed in the drop down
+    menu via a WPS GetCapabilities request. On the event of selecting a specific process from the
+    list a DescribeProcess request is sent to the server. As the response a description of the server
+    along with a form to enter inputs to the selected WPS process is displayed. Once the form is
+    completed and process is executed (ExecuteProcess request), the output is visualized on the map
+    (Common Map Tool) and/or displayed in text accordingly.
+</p>
+<ul>
+    <li><b>WFS Client</b></li>
+</ul>
+<p><b><i>Functionality:</i></b> Allows the user to load geospatial data exposed through WFS from a remote
+    server<br>
+    Given a URL, a list of features available in the particular server is displayed in the drop down
+    menu via a WFS GetCapabilities request. Once a feature is selected the data relevant to it is
+    retrieved via a GetFeature request and displayed on the map (Common Map Tool).
+</p>
+<ul>
+    <li><b>KML CLient</b></li>
+</ul>
+<p><b><i>Functionality:</i></b> Allows the user to load and visualize geospatial data using local KML files
+    <br>
+    As described earlier KML is another geospatial data format standardized by OGC. Any KML file
+    containing geospatial data can be visualized via this tool. A file can be browsed from the local
+    file system and the data will be visualized on the map (Common Map Tool).
+</p>
+<ul>
+    <li><b>GML Client</b></li>
+</ul>
+<p>
+    <b><i>Functionality:</i></b> Allows the user to load and visualize geospatial data using local GML files
+    As described earlier GML is another geospatial data format standardized by OGC. Any GML file
+    containing geospatial data can be visualized via this tool. A file can be browsed from the local
+    file system and the data will be visualized on the map (Common Map Tool).
+</p>
+<ul>
+    <li><b>Common Map Tool</b></li>
+</ul>
+<p><b><i>Functionality:</i></b> Visualize geospatial data loaded from other tools
+    This tool communicates with all the other Dhara portal tools. Several layers of maps from
+    different sources are included in this. User is allowed to switch between the map layers are
+    necessary. Maps used in the tools are: Open Street Map, Google Maps (Street view, Earth view,
+    Hybrid view). A layer named as scratch pad is also included in the map which allows the user to
+    mark points, lines or polygons (features) using the tools on top right corner of the map. The map
+    can be zoomed and panned as well. Another capability is to provide input for WPS by first
+    clicking on a feature and then on the input field.
+</p>
+<ul>
+    <li><b>Managing the Tools</b></li>
+</ul>
+<p>Each user has a separate account and is allowed to use the required tools and customize the pages
+    accordingly. Apache Rave supports creating a new account by giving a unique username and
+    password also by using the OpenID. By default we provide the home page with the Common
+    Map tool and the WPS Client tool to a new user. Users are allowed to add new tools from the
+    Tool Store. The rest of the tools mentioned above are available in the tool store. The page layout
+    and naming can also be changed according to user preference.
+</p>
+<h4>Functionalities for the admin of the gateway</h4>
+<ul>
+    <li><b>Managing the Workflows</b></li>
+</ul>
+<p>Newly added workflows feature to admin interface allows admin users to view and deploy
+    available workflows of Apache Airavata. Admin user can navigate into the workflows list
+    through navigation link and see the available workflows of the system. Workflows page allows
+    admin user to perform a default deployment or a custom deployment. Default deployment is a
+    one click operation where backend do the code generation by extracting workflow details from
+    Airavata API. Custom deployment allows users to change the input and output mappings‟ types
+    of workflows to different types which compatible with 52o North WPS types. Admin users can
+    also change the extending algorithm of generated class through custom deployment.
+
+</p>
+<ul>
+    <li><b>Managing the Experiments</b></li>
+</ul>
+<p>
+    Admin users can view the executed experiments from this interface. Apache Airavata considered
+    experiment as an executed workflow with inputs. Each workflow execution associated with an
+    experiment name and an UUID. Through this interface admin users can view the experiment
+    name, UUID, person who executed it and the data of execution. In addition users can view the
+    inputs at each node of a workflow until the output node.
+
+</p>
+
