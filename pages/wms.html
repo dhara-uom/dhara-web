@@ -1,0 +1,21 @@
+<h3>OGC’s WMS (Web Mapping Service)</h3>
+<p>
+    OGC‟s WMS (Web Map Service) is a standard protocol for obtaining the geographical map
+    images by a map server.Output can be obtained in PNG, GIF, JPEG OR SVG (Scalable Vector
+    Graphics), and Web Computer Graphics Metafile (WebCGM) formats. There are basically three
+    types of information available; service level metadata, map and features on the map. Three
+    operations are handled by WMS spec; GetCapabilities, GetMap, GetFeatureInfo.
+    As response for „GetCapabilities‟ operation, client receives services description and request
+    parameters accepted via a XML document. In „GetMap‟ request user should specify the format,
+    width & height, SRS (Spatial Reference System), Bounding box co-ordinates etc. Height, width,
+    Style, format and transparency can also be defined. Map can also be obtained in as layers from
+    different WMS servers. The response can even be an exception in the case of standard violation.
+    „GetFeatureInfo‟ operation returns a feature on the map if that is enabled on the desired map
+    server. Client has to specify the relevant X, Y parameters in the request.
+    27
+</p>
+<p>
+    WMS is the most widely used standard among WPS, WMS, WCS and WFS. Vast variety of
+    clients obtains their map services via this standard. Therefore map servers those who do not
+    implement OGC at its core tend to implement WMS converters to increase interoperability.
+</p>
