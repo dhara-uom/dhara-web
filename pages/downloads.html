@@ -1,0 +1,13 @@
+<h3>Downloads</h3>
+<p>Dhara Geoscience Gateway is built by integrating several key components. Apache Airavata is the main workflow execution engine of Dhara Geoscience Gateway, Dhara portal is a extended version of Apache Airavata which is a framework for build science gateways. We have use 52 North WPS implementation as our backend WPS provider.&nbsp;</p>
+
+<p>We have used unmodified of Apache Airavata 0.7 release for our implementation. Apache Airavata standalone version or war distribution can be download <a href="http://airavata.apache.org/about/downloads-archive.html">here</a>.&nbsp;</p>
+
+<p>Dhara portal is powered by Apache Rave. We have built a custom portal extending Apache Rave for our front end portal. Source code and build instructions can be find in <a href="https://github.com/dhara-uom/rave_portal">here</a>. We have done some changes to the Apache Rave core contains the core functions of the portal including user management. Modified version of Apache Rave code can be find <a href="https://github.com/dhara-uom/ravecore">here</a>.&nbsp;</p>
+
+<p>52 North WPS is the backend WPS provider of the Dhara Portal. Customized version of 52 North WPS which modified for meet with our requirements has used for the Dhara Gateway Implementation. Source code and the build instructions can be find <a href="https://github.com/dhara-uom/WPS">here</a>.</p>
+
+<p>We have considered testing Dhara Gateway functions as a key requirement for the portal management. Apart from the unit tests available in each component, we have write a separate test module for test the portal status. Build instructions and the source code can be find <a href="https://github.com/dhara-uom/testmodule">here</a>.</p>
+
+<p>
+We have faced with jar packages conflicts inside our custom portal with Apache Airavata client API jars. This is due to version conflicts among jars. As a solution for this, we have come up with backend Web Application which provides a REST API for Apache Airvata client API. This will be use until version upgrades in Apache Airavata. Build instructions and source code can be find <a href="https://github.com/dhara-uom/portal">here</a>. </p>
